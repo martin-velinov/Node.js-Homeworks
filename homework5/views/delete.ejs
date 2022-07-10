@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/index.js"></script>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <h2>Viewing user with id #<%= user.id %></h2>
+   <form onsubmit="event.preventDefault()" id="form">
+    <p><%= user.name %></p>
+    <p><%= user.lastname %></p>
+    <p><%= user.ssn %></p>
+    <p><%= user.email %></p>
+    
+    <button onclick="deleteUser(`<%= user.id %>`);">Delete</button>
+  </form>
+  </body>
+</html>

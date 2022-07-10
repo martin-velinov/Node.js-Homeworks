@@ -13,10 +13,11 @@ router.get("/new", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-  const isValid = false
+  const isValid = true
   if (isValid) {
     users.push({ firstName: req.body.firstName })
     res.redirect(`/users/${users.length - 1}`)
+    
   } else {
     console.log("Error")
     res.render("users/new", { firstName: req.body.firstName })
@@ -37,6 +38,7 @@ router
   })
 
 const users = [{ name: "Kyle" }, { name: "Sally" }]
+
 router.param("id", (req, res, next, id) => {
   req.user = users[id]
   next()
