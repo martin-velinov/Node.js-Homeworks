@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/index.js"></script>
   </head>
   <body>
     <a href="/create">Create new user</a>
@@ -15,7 +16,7 @@
         <td><%= user.ssn %></td>
         <td><a href="/user/<%= user.id %>/view">View</a></td>
         <td><a href="/user/<%= user.id %>/edit">Edit</a></td>
-        <td><a href="/user/<%= user.id %>/delete">Delete</a></td>
+        <td><button onclick="deleteUser(`<%= user.id %>`);">Delete</button></td>
       </tr>
      <% }) %>
     </table>
